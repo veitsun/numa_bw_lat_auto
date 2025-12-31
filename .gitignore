@@ -1,0 +1,3 @@
+numa_out_run_*/
+slurm-*.out
+slurm-*.err
