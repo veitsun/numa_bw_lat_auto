@@ -287,7 +287,8 @@ int main(int argc, char **argv) {
 
     if (mode == MODE_BW || mode == MODE_BOTH) {
         double bps = run_bw_mt(buf, len, iters, threads, cpu, cpus, ncpus);
-        printf("bw_bytes_per_sec=%.0f bw_GiB_per_sec=%.3f\n", bps, bps / (1024.0*1024.0*1024.0));
+        double gib = bps / (1024.0 * 1024.0 * 1024.0);
+        printf("bw_GiB_per_sec=%.3f\n", gib);
     }
     if (mode == MODE_LAT || mode == MODE_BOTH) {
         double ns = run_lat_random(buf, len, stride);
